@@ -16,6 +16,9 @@ git pull
 # Update pre-commit
 bash ./pre-commit_update.sh
 
+# Install Poetry
+bash ./poetry.sh
+
 # Display hello message
 bash ./hello-message.sh
 

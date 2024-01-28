@@ -18,6 +18,7 @@
 			"extensions": [
 				"github.copilot", // Copilot extension for VS Code
 				"github.vscode-pull-request-github", // Pull Request extension for VS Code
+				"ms-python.python", // Python extension for VS Code
 				"charliermarsh.ruff", // Ruff extension for VS Code
 				"njpwerner.autodocstring", // Auto Docstring extension for VS Code
 				"ms-python.mypy-type-checker", // Mypy extension for VS Code
@@ -37,6 +38,9 @@
 				"[python]": {
 					"editor.defaultFormatter": "charliermarsh.ruff"
 				},
+				"ruff.interpreter": [
+					"/workspace/.venv/bin/python"
+				],
 				"python.defaultInterpreterPath": "/workspace/.venv/bin/python",
 				"python.terminal.activateEnvInCurrentTerminal": true,
 				"python.terminal.activateEnvironment": true,
