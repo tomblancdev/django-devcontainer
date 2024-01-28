@@ -38,7 +38,7 @@
 				"editor.formatOnPaste": true,
 				// ### Python settings ###
 				"[python]": {
-					"editor.defaultFormatter": "charliermarsh.ruff",
+					"editor.defaultFormatter": "charliermarsh.ruff"
 				},
 				"python.defaultInterpreterPath": "/workspace/.venv/bin/python",
 				"python.terminal.activateEnvInCurrentTerminal": true,
