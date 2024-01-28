@@ -7,8 +7,8 @@
 	"service": "python-devcontainer",
 	"workspaceFolder": "/workspace",
 	"shutdownAction": "stopCompose",
-	// "postCreateCommand": "echo 'hello world'", // ! 👈 Uncomment or change this to run commands after the container is created.
-	// "postStartCommand": "echo 'hello world'", // ! 👈 Uncomment or change this to run commands after the container is started.
+	"postCreateCommand": "bash /workspace/.devcontainer/scripts/post-create.sh",
+	"postStartCommand": "bash /workspace/.devcontainer/scripts/post-start.sh",
 	// 👇 Features to add to the Dev Container. More info: https://containers.dev/implementors/features.
 	// "features": {},
 	// 👇 Use 'forwardPorts' to make a list of ports inside the container available locally.
