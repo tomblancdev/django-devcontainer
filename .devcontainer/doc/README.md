@@ -44,7 +44,7 @@ This dev container is designed to be used with the [Remote - Containers](https:/
 
 ### Rename the service 🖊️
 
-This service is named `untitled` by default.
+This service is named `python-devcontainer` by default.
 
 If you want to change the name of the service, you need to change the name in many files:
 - [.devcontainer/devcontainer.json](../devcontainer.json)
@@ -52,13 +52,13 @@ If you want to change the name of the service, you need to change the name in ma
 
 ### Rename the container 🖊️
 
-This container is named `untitled-dev` by default.
+This container is named `python-devcontainer` by default.
 
 Name of the container is defined in the [docker-compose.dev.yml](../docker-compose.dev.yml) file.
 
 ### Rename the devcontainer 🖊️
 
-This devcontainer is named `untitled-dev` by default.
+This devcontainer is named `python-devcontainer` by default.
 
 Name of the devcontainer is defined in the [devcontainer.json](../devcontainer.json) file.
 
