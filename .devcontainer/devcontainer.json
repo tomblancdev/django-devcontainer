@@ -2,7 +2,7 @@
 	"name": "python-devcontainer",
 	"dockerComposeFile": [
 		// "../../docker-compose.yml", // ! 👈 Uncomment or change this to the path of your docker-compose file.
-		"./docker-compose.dev.yml"
+		"./docker-compose.dev.yaml"
 	],
 	"service": "python-devcontainer",
 	"workspaceFolder": "/workspace",
