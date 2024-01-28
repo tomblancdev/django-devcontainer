@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "python-devcontainer"
+version = "0.0.1"
+description = "Description of your project"
+authors = ["Your Name <you@example.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.1.14"
+mypy = "^1.8.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+select = ["ALL"]
+ignore = ["D211", "D213", "COM812", "ISC001"]
+fix = true
