@@ -7,6 +7,9 @@ NC='\033[0m'
 
 echo -e "${CYAN}Starting post-start script...${NC}"
 
+# Pull current branch from git
+git pull
+
 # Update pre-commit
 bash ./pre-commit_update.sh
 
