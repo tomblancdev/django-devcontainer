@@ -7,7 +7,7 @@
 	"service": "python-devcontainer",
 	"workspaceFolder": "/workspace",
 	"shutdownAction": "stopCompose",
-	"postCreateCommand": "bash /workspace/.devcontainer/scripts/post-create.sh",
+	"postCreateCommand": "bash /workspace/.devcontainer/scripts/CRLF_to_LF.sh && bash /workspace/.devcontainer/scripts/post-create.sh",
 	"postStartCommand": "bash /workspace/.devcontainer/scripts/post-start.sh",
 	"containerEnv": {
 		"GIT_TEMPLATE_REPO_URL": "https://github.com/tomblancdev/python-devcontainer.git", // ! 👈 Change this to your template repository.
