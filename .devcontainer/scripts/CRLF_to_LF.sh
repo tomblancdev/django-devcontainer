@@ -1,6 +1,1 @@
-cd /workspace/scripts
-
-# map into files
-find . -type f -exec sed -i 's/\r$//' {} \;
-
-exit 0
+cd /workspace/scripts && find . -type f -exec sed -i 's/\r$//' {} \ && exit 0
