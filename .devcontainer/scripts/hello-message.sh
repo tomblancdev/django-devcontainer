@@ -1,5 +1,6 @@
 CYAN='\033[0;36m'
 GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
 RED='\033[0;31m'
 NC='\033[0m'
 BOLD="\e[1m"
@@ -38,26 +39,26 @@ arts=(
 # get current branch
 branch=$(git branch | grep \* | cut -d ' ' -f2)
 
-# check if branch is updated from template
-git_uno=$(git status template/main -uno)
-template_status="unfetched"
+# call merge-git-template.sh
+template_status=$(bash /workspace/.devcontainer/scripts/merge-git-template.sh)
 
-if [[ $git_uno == *"Your branch is up to date"* ]]; then
-    echo -e "${GREEN}Your branch is up to date with 'template/main'${NC}"
-    template_status="${GREEN}up-to-date${NC}"
+if [[ $template_status == "up-to-date" ]]; then
+    template_status="${GREEN}${template_status}${NC}"
+elif [[ $template_status == "not-up-to-date" ]]; then
+    template_status="${RED}${template_status}${NC}"
 else
-    echo -e "${RED}Your branch is not up to date with 'template/main'${NC}"
-    template_status="${RED}not-up-to-date${NC}"
+    template_status="${YELLOW}${template_status}${NC}"
 fi
 
-git_template_sync_message="""
+git_template_sync_message=""
+
+
+if [[ $template_status == "${RED}not-up-to-date${NC}" ]]; then
+    git_template_sync_message="""
 
 You can sync your branch with the template by running the following command:
     ${BOLD}git merge template/main --allow-unrelated-histories${CLEAR}
 """
-
-if [[ $template_status == "${GREEN}up-to-date${NC}" ]]; then
-    git_template_sync_message=""
 fi
 
 

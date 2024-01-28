@@ -9,13 +9,11 @@
 	"shutdownAction": "stopCompose",
 	"postCreateCommand": "bash /workspace/.devcontainer/scripts/post-create.sh",
 	"postStartCommand": "bash /workspace/.devcontainer/scripts/post-start.sh",
-	// 👇 Features to add to the Dev Container. More info: https://containers.dev/implementors/features.
-	// "features": {},
-	// 👇 Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-	// 👇 Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "",
-	// 👇 Configure tool-specific properties.
+	"containerEnv": {
+		"GIT_TEMPLATE_REPO_URL": "https://github.com/tomblancdev/python-devcontainer.git", // ! 👈 Change this to your template repository.
+		"GIT_TEMPLATE_REMOTE_NAME": "template", // ! 👈 Change this to your template remote.
+		"MERGE_GIT_TEMPLATE_ON_START": "true" // ! 👈 Change this to false if you don't want to merge the template on start.
+	},
 	"customizations": {
 		"vscode": {
 			"extensions": [

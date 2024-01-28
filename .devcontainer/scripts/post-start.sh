@@ -7,6 +7,9 @@ NC='\033[0m'
 
 echo -e "${CYAN}Starting post-start script...${NC}"
 
+# Fetch all branches from git
+git fetch --all
+
 # Pull current branch from git
 git pull
 
