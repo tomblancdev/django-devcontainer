@@ -7,6 +7,33 @@ services:
     restart: always # restart the container if it stops
     volumes: # mount the current directory to the container
       - ..:/workspace:cached # mount the current directory as workspace to the container
+      # - ../static:/static:cached # mount the static directory to the container
+      # - ../media:/media:cached # mount the media directory to the container
     environment: # set environment variables
       POETRY_VIRTUALENVS_IN_PROJECT: True
+      ENVIRONMENT: development # ! 👈 set the environment : development | production
+      # DEBUG: True
+      # SECRET_KEY: "django-insecure-+&!%$#^&*"
+      # DB_ENGINE: django.db.backends.postgresql
+      # DB_NAME: postgres
+      # DB_USER: root
+      # DB_PASSWORD: root
+      # DB_HOST: db
+      # DB_PORT: 5432
+      # DB_PASSWORD: root
+      # EMAIL_HOST: smtp.gmail.com
+      # EMAIL_PORT: 587
+      # EMAIL_HOST_USER: your_email
+      # EMAIL_HOST_PASSWORD: your_password
+      # EMAIL_USE_TLS: True
+      # EMAIL_USE_SSL: False
+      # EMAIL_TIMEOUT: 60
+      # EMAIL_SSL_KEYFILE: None
+      # EMAIL_SSL_CERTFILE: None
+      # LANGUAGE_CODE: en-us
+      # TIME_ZONE: UTC
+      # STATIC_URL: /static/
+      # STATIC_ROOT: /static
+      # MEDIA_URL: /media/
+      # MEDIA_ROOT: /media
     command: /bin/sh -c "while sleep 1000; do :; done" # * keep the container running
