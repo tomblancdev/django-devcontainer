@@ -31,6 +31,7 @@ build-backend = "poetry.core.masonry.api"
 [tool.ruff]
 select = ["ALL"]
 ignore = ["D211", "D213", "COM812", "ISC001"]
+exclude = ["migrations"]
 fix = true
 
 [tool.mypy]
