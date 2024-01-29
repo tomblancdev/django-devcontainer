@@ -7,29 +7,29 @@ This dev container is designed to be used with the [Remote - Containers](https:/
 ## Table of contents 📑
 
 - [Python devcontainer template](#python-devcontainer-template)
-  - [Description 📃](#description-📃)
-  - [Table of contents 📑](#table-of-contents-📑)
-  - [Getting Started 🚀](#getting-started-🚀)
-    - [Prerequisites 📋](#prerequisites-📋)
-    - [Steps 📜](#steps-📜)
-  - [Setting up the dev container 🛠️](#setting-up-the-dev-container-️🛠️)
-    - [Rename the service 🖊️](#rename-the-service-️🖊️)
-    - [Rename the container 🖊️](#rename-the-container-️🖊️)
-    - [Rename the devcontainer 🖊️](#rename-the-devcontainer-️🖊️)
-  - [Add it to your production docker-compose 📦](#add-it-to-your-production-docker-compose-📦)
-  - [Provided tools 🧰](#provided-tools-🧰)
-  - [Issues 😵‍💫](#issues-😵‍💫)
+  - [Description](#description)
+  - [Table of contents](#table-of-contents)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Steps](#steps)
+  - [Setting up the dev container](#setting-up-the-dev-container-)
+    - [Rename the service](#rename-the-service-)
+    - [Rename the container](#rename-the-container)
+    - [Rename the devcontainer](#rename-the-devcontainer)
+  - [Add it to your production docker-compose](#add-it-to-your-production-docker-compose)
+  - [Provided tools](#provided-tools)
+  - [Issues](#issues)
 
-## Getting Started 🚀
+## Getting started
 
-### Prerequisites 📋
+### Prerequisites
 
 - [Docker](https://docs.docker.com/get-docker/)
 - [VS Code](https://code.visualstudio.com/)
 - [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension
 - [Docker extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
 
-### Steps 📜
+### Steps
 
 1. Create a new repository using this template
 2. Clone the repository
@@ -40,9 +40,9 @@ This dev container is designed to be used with the [Remote - Containers](https:/
 7. Wait for the container to build
 8. You're done! You can now use VS Code as normal
 
-## Setting up the dev container 🛠️
+## Setting up the dev container
 
-### Rename the service 🖊️
+### Rename the service
 
 This service is named `python-devcontainer` by default.
 
@@ -50,19 +50,19 @@ If you want to change the name of the service, you need to change the name in ma
 - [.devcontainer/devcontainer.json](../devcontainer.json)
 - [.devcontainer/docker-compose.dev.yml](../docker-compose.dev.yml)
 
-### Rename the container 🖊️
+### Rename the container
 
 This container is named `python-devcontainer` by default.
 
 Name of the container is defined in the [docker-compose.dev.yml](../docker-compose.dev.yml) file.
 
-### Rename the devcontainer 🖊️
+### Rename the devcontainer
 
 This devcontainer is named `python-devcontainer` by default.
 
 Name of the devcontainer is defined in the [devcontainer.json](../devcontainer.json) file.
 
-## Add it to your production docker-compose 📦
+## Add it to your production docker-compose
 
 By default this devcontainer is not included in the production docker-compose file.
 
@@ -84,10 +84,25 @@ If you want to include it, you need to add it to the [docker-compose.yml](../doc
     ],
 ```
 
-## Provided tools 🧰
+### Add your git template base
+
+If you want to add your own git template base, you need to add it to the [devcontainer.json](../devcontainer.json) file.
+
+```json
+"containerEnv": {
+  "GIT_TEMPLATE_REPO_URL": "https://github.com/tomblancdev/python-devcontainer.git", // ! 👈 Change this to your template repository.
+  "GIT_TEMPLATE_REMOTE_NAME": "template" // ! 👈 Change this to your template remote.
+},
+```
+
+The template will be set at the first build of the devcontainer.
+
+When container start, it will check if your current repository is up to date with the template repository.
+
+## Provided tools
 
 > Please refer to [provided tools DOC](./provided-tools.md) for more information
 
-## Issues 😵‍💫
+## Issues
 
 > Please refer to [issues DOC](./issues.md) for more information

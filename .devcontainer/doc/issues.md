@@ -1,5 +1,11 @@
 # Issues 😵‍💫
 
+## Table of contents
+
+- [Troubles with git 🌿](#troubles-with-git-)
+  - [Git connection with HTTPS to your devcontainer](#git-connection-with-https-to-your-devcontainer)
+- [Troubles with Vscode extensions 🧩](#troubles-with-vscode-extensions-)
+
 ## Troubles with git 🌿
 
 VsCode share the git configuration with the container so you may be able to use git in the container.

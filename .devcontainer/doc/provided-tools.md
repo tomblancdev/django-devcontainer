@@ -62,8 +62,7 @@ The following VS Code extensions are installed in the container:
 - [autodocstring](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring)
 - [ruff](https://marketplace.visualstudio.com/items?itemName=astralsh.ruff)
 - [mypy](https://marketplace.visualstudio.com/items?itemName=ms-python.mypy)
-- [black](https://marketplace.visualstudio.com/items?itemName=ms-python.black)
-- [better-comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
+- [cspell](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
 
 ### Default settings
 
