@@ -1,0 +1,59 @@
+{
+	"name": "python-devcontainer",
+	"dockerComposeFile": [
+		// "../../docker-compose.yml", // ! 👈 Uncomment or change this to the path of your docker-compose file.
+		"./docker-compose.dev.yaml"
+	],
+	"service": "python-devcontainer",
+	"workspaceFolder": "/workspace",
+	"shutdownAction": "stopCompose",
+	"postCreateCommand": "bash /workspace/.devcontainer/scripts/post-create.sh",
+	"postStartCommand": "bash /workspace/.devcontainer/scripts/post-start.sh",
+	"containerEnv": {
+		"GIT_TEMPLATE_REPO_URL": "https://github.com/tomblancdev/python-devcontainer.git", // ! 👈 Change this to your template repository.
+		"GIT_TEMPLATE_REMOTE_NAME": "template" // ! 👈 Change this to your template remote.
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"github.copilot", // Copilot extension for VS Code
+				"github.vscode-pull-request-github", // Pull Request extension for VS Code
+				"ms-python.python", // Python extension for VS Code
+				"charliermarsh.ruff", // Ruff extension for VS Code
+				"njpwerner.autodocstring", // Auto Docstring extension for VS Code
+				"ms-python.mypy-type-checker", // Mypy extension for VS Code
+				"aaron-bond.better-comments", // Better Comments extension for VS Code
+				"tamasfe.even-better-toml", // Even Better TOML extension for VS Code
+				"streetsidesoftware.code-spell-checker" // Code Spell Checker extension for VS Code
+			],
+			"settings": {
+				// ### Global settings ###
+				"editor.codeActionsOnSave": {
+					"source.organizeImports": "explicit",
+					"source.fixAll": "explicit"
+				},
+				"editor.formatOnSave": true,
+				"editor.formatOnPaste": true,
+				// ### Python settings ###
+				"[python]": {
+					"editor.defaultFormatter": "charliermarsh.ruff"
+				},
+				"ruff.interpreter": [
+					"/workspace/.venv/bin/python"
+				],
+				"python.defaultInterpreterPath": "/workspace/.venv/bin/python",
+				"python.terminal.activateEnvInCurrentTerminal": true,
+				"python.terminal.activateEnvironment": true,
+				"python.analysis.autoImportCompletions": true,
+				"python.analysis.typeCheckingMode": "basic"
+			}
+		}
+	},
+	"features": {
+		"ghcr.io/devcontainers-contrib/features/mypy:2": {},
+		"ghcr.io/devcontainers-contrib/features/ruff:1": {},
+		"ghcr.io/devcontainers-contrib/features/pre-commit:2": {}
+	},
+	// 👇 Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	"remoteUser": "root"
+}
