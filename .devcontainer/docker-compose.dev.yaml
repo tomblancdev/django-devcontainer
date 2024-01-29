@@ -1,9 +1,9 @@
 version: "latest"
 
 services:
-  python-devcontainer: # ! 👈 name of the service
+  django-devcontainer: # ! 👈 name of the service
     build: . # path to the Dockerfile
-    container_name: python-devcontainer # ! 👈 name of the container
+    container_name: django-devcontainer # ! 👈 name of the container
     restart: always # restart the container if it stops
     volumes: # mount the current directory to the container
       - ..:/workspace:cached # mount the current directory as workspace to the container
