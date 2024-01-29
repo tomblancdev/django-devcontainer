@@ -1,4 +1,4 @@
-> Please refer to [This devcontainer DOC](./.devcontainer/docs/) for more information during the development process.
+> Please refer to [This devcontainer DOC](./.devcontainer/doc/) for more information during the development process.
 
 # python-devcontainer
 
