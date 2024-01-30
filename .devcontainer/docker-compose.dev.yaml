@@ -12,6 +12,8 @@ services:
     environment: # set environment variables
       POETRY_VIRTUALENVS_IN_PROJECT: True
       ENVIRONMENT: development # ! 👈 set the environment : development | production
+      DJANGO_SUPERUSER_EMAIL: "admin@example.com"
+      DJANGO_SUPERUSER_PASSWORD: "passsword"
       # DEBUG: True
       # SECRET_KEY: "django-insecure-+&!%$#^&*"
       # DB_ENGINE: django.db.backends.postgresql
