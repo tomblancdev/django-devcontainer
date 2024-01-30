@@ -61,9 +61,15 @@ You can sync your branch with the template by running the following command:
 """
 fi
 
+django_debug_message=""
+if [[ $DEBUG == "True" ]]; then
+    django_debug_message="${GREEN}True${NC}"
+else
+    django_debug_message="${RED}False${NC}"
+fi
 
 hello_message="""
-Welcome to the ${RED}Python${NC} development container!
+Welcome to the ${RED}Django${NC} development container!
 
 You are connected as ${RED}${USER}${NC}.
 
@@ -73,6 +79,8 @@ Informations about the container:
     - ${UNDERLINE}Current branch${CLEAR}: ${CYAN}${branch}${NC}
     - ${UNDERLINE}Template status${CLEAR}: ${template_status}${git_template_sync_message}
     - ${UNDERLINE}Current directory${CLEAR}: ${CYAN}$(pwd)${NC}
+
+$(bash /workspace/.devcontainer/scripts/django-message.sh)
 
 You can now start to code!
 

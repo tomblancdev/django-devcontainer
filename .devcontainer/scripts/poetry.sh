@@ -1,7 +1,7 @@
 cd /workspace
 
 # Install Poetry
-poetry install --no-root
+poetry install
 
 #  update dependencies to latest compatible versions
 poetry update

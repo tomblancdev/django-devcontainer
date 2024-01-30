@@ -19,6 +19,9 @@ bash ./pre-commit_update.sh
 # Install Poetry
 bash ./poetry.sh
 
+#  install django
+bash ./django-install.sh
+
 # Display hello message
 bash ./hello-message.sh
 
