@@ -6,12 +6,23 @@ authors = ["Your Name <you@example.com>"]
 license = "MIT"
 readme = "README.md"
 
+packages = [
+    { include = "config", from = "." },
+    { include = "*", from = "apps" },
+]
+
 [tool.poetry.dependencies]
 python = "^3.12"
+django = "^5.0.1"
+djangorestframework = "^3.14.0"
+pillow = "^10.2.0"
+psycopg2-binary = "^2.9.9"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.1.14"
 mypy = "^1.8.0"
+django-stubs = "^4.2.7"
+djangorestframework-stubs = "^3.14.5"
 
 [build-system]
 requires = ["poetry-core"]
@@ -20,4 +31,11 @@ build-backend = "poetry.core.masonry.api"
 [tool.ruff]
 select = ["ALL"]
 ignore = ["D211", "D213", "COM812", "ISC001"]
+exclude = ["migrations"]
 fix = true
+
+[tool.mypy]
+plugins = ["mypy_django_plugin.main", "mypy_drf_plugin.main"]
+
+[tool.django-stubs]
+django_settings_module = "config.settings"

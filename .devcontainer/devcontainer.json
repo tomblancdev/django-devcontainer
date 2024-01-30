@@ -1,10 +1,10 @@
 {
-	"name": "python-devcontainer",
+	"name": "django-devcontainer",
 	"dockerComposeFile": [
 		// "../../docker-compose.yml", // ! 👈 Uncomment or change this to the path of your docker-compose file.
 		"./docker-compose.dev.yaml"
 	],
-	"service": "python-devcontainer",
+	"service": "django-devcontainer",
 	"workspaceFolder": "/workspace",
 	"shutdownAction": "stopCompose",
 	"postCreateCommand": "bash /workspace/.devcontainer/scripts/post-create.sh",
