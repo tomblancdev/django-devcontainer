@@ -10,8 +10,8 @@
 	"postCreateCommand": "bash /workspace/.devcontainer/scripts/post-create.sh",
 	"postStartCommand": "bash /workspace/.devcontainer/scripts/post-start.sh",
 	"containerEnv": {
-		"GIT_TEMPLATE_REPO_URL": "https://github.com/tomblancdev/python-devcontainer.git", // ! 👈 Change this to your template repository.
-		"GIT_TEMPLATE_REMOTE_NAME": "template" // ! 👈 Change this to your template remote.
+		"GIT_TEMPLATE_REPO_URLS": "https://github.com/tomblancdev/python-devcontainer.git", // ! 👈 Change this to your templates repositories.
+		"GIT_TEMPLATE_REMOTE_NAME": "TEMPLATE" // ! 👈 Change this to your template remote.
 	},
 	"customizations": {
 		"vscode": {
