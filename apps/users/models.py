@@ -44,6 +44,7 @@ class UserManager(BaseUserManager["User"]):
         """Create superuser."""
         user = self.create_user(email, password, **extra_fields)
         user.is_superuser = True
+        user.is_staff = True
         user.save()
         return user
 
@@ -53,6 +54,11 @@ class User(AbstractBaseUser, PermissionsMixin):
     """Custom user model."""
 
     email = models.EmailField(unique=True)
+
+    is_staff = models.BooleanField(
+        default=False,
+        help_text=_("Designates whether the user can log into this admin site."),
+    )
 
     USERNAME_FIELD = "email"
 
