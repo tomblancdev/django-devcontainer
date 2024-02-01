@@ -38,4 +38,6 @@ services:
       # STATIC_ROOT: /static
       # MEDIA_URL: /media/
       # MEDIA_ROOT: /media
+    ports: # expose ports
+      - "8000:80" # expose port 8000 to the host
     command: /bin/sh -c "while sleep 1000; do :; done" # * keep the container running
