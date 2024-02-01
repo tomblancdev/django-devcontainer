@@ -19,6 +19,9 @@ bash ./pre-commit_update.sh
 # Install Poetry
 bash ./poetry.sh
 
+# Install Django
+bash ./django-install.sh
+
 # check if git template repo are up-to-date
 template_repo_status=$(bash ./git/check-merge-templates.sh)
 
