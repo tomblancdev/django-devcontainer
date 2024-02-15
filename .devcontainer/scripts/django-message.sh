@@ -7,6 +7,8 @@ BOLD="\e[1m"
 UNDERLINE="\e[4m"
 CLEAR="\e[0m"
 
+cd ${APP_HOME}
+
 django_version=$(poetry run python -m django --version)
 debug=$(poetry run python /workspace/manage.py shell -c "from django.conf import settings; print(settings.DEBUG)")
 media_root=$(poetry run python /workspace/manage.py shell -c "from django.conf import settings; print(settings.MEDIA_ROOT)")

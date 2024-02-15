@@ -1,4 +1,5 @@
-cd /workspace/.devcontainer/scripts
+cd ${APP_HOME}/.devcontainer/scripts
+echo $(pwd)
 
 CYAN='\033[0;36m'
 GREEN='\033[0;32m'
@@ -30,7 +31,7 @@ bash ./hello-message.sh
 
 if [[ $template_repo_status == *"not-up-to-date"* ]]; then
     echo -e "${RED}Your template repo are not up-to-date!${NC}"
-    echo -e "${RED}Run ${CYAN}bash /workspace/.devcontainer/scripts/git/check-merge-templates.sh${RED} to check your template status${NC}"
+    echo -e "${RED}Run ${CYAN}bash ${APP_HOME}/.devcontainer/scripts/git/check-merge-templates.sh${RED} to check your template status${NC}"
 else
     echo -e "${GREEN}Your template repo are up-to-date!${NC}"
 fi

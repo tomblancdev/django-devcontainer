@@ -2,7 +2,7 @@
 	"name": "django-devcontainer",
 	"dockerComposeFile": [
 		// "../../docker-compose.yml", // ! 👈 Uncomment or change this to the path of your docker-compose file.
-		"./docker-compose.dev.yaml"
+		"./docker-compose.dev.yml"
 	],
 	"service": "django-devcontainer",
 	"workspaceFolder": "/workspace",

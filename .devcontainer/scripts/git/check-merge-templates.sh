@@ -9,7 +9,7 @@ BOLD='\033[1m'
 CLEAR='\033[0m'
 
 function get_unique_remote_name() {
-    bash /workspace/.devcontainer/scripts/git/get-remote-template-name.sh ${1}
+    bash ${APP_HOME}/.devcontainer/scripts/git/get-remote-template-name.sh ${1}
 }
 
 function check_merge_template() {
@@ -51,7 +51,7 @@ for git_template_repo_url in ${git_template_repo_urls[@]}; do
     fi
     echo -e "${CYAN}${git_template_repo_url}${NC} : ${status_color}"
     if [[ $status == "not-up-to-date" ]]; then
-        echo -e "${YELLOW}Run ${UNDERLINE}${BOLD}bash /workspace/.devcontainer/scripts/git/merge-template.sh ${git_template_repo_url}${CLEAR}${NC} to merge changes into your project"
+        echo -e "${YELLOW}Run ${UNDERLINE}${BOLD}bash ${APP_HOME}/.devcontainer/scripts/git/merge-template.sh ${git_template_repo_url}${CLEAR}${NC} to merge changes into your project"
     fi
     echo ""
 done

@@ -1,4 +1,4 @@
-cd /workspace
+cd ${APP_HOME}
 
 CYAN='\033[0;36m'
 NC='\033[0m' # No Color
