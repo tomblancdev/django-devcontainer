@@ -1,4 +1,4 @@
-cd /workspace
+cd ${APP_HOME}
 
 CYAN='\033[0;36m'
 YELLOW='\033[1;33m'
@@ -8,7 +8,7 @@ NC='\033[0m' # No Color
 
 
 function get_unique_remote_name() {
-    bash /workspace/.devcontainer/scripts/git/get-remote-template-name.sh ${1}
+    bash ${APP_HOME}/.devcontainer/scripts/git/get-remote-template-name.sh ${1}
 }
 
 create_remote() {

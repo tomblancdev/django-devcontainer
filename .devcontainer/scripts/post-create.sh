@@ -5,12 +5,12 @@ NC='\033[0m' # No Color
 
 echo -e "${CYAN}Runing post-create.sh${NC}"
 
-cd /workspace
+cd ${APP_HOME}
 
-bash /workspace/.devcontainer/scripts/git/add-remote-templates.sh
+bash ${APP_HOME}/.devcontainer/scripts/git/add-remote-templates.sh
 
 echo -e "${CYAN}Copying nginx.conf${NC}"
-bash /workspace/.devcontainer/scripts/copy-nginx-conf.sh
+bash ${APP_HOME}/.devcontainer/scripts/copy-nginx-conf.sh
 echo -e "${GREEN}Copying nginx.conf done${NC}"
 
 # Start Nginx

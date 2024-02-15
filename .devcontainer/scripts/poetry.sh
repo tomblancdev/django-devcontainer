@@ -1,4 +1,4 @@
-cd /workspace
+cd ${APP_HOME}
 
 # Install Poetry
 poetry install

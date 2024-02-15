@@ -51,7 +51,7 @@ Informations about the container:
     - ${UNDERLINE}Current branch${CLEAR}: ${CYAN}${branch}${NC}
     - ${UNDERLINE}Current directory${CLEAR}: ${CYAN}$(pwd)${NC}
 
-$(bash /workspace/.devcontainer/scripts/django-message.sh)
+$(bash ${APP_HOME}/.devcontainer/scripts/django-message.sh)
 
 You can now start to code!
 

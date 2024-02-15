@@ -1,11 +1,11 @@
 # get git template remote name from url pass as argument
 # create function to get unique remote name that will take in argument a GIT_TEMPLATE_REPO_URL
 function get_unique_remote_name() {
-    bash /workspace/.devcontainer/scripts/git/get-remote-template-name.sh ${1}
+    bash ${APP_HOME}/.devcontainer/scripts/git/get-remote-template-name.sh ${1}
 }
 
 function get_branch_name() {
-    template=$(bash /workspace/.devcontainer/scripts/git/get-branch-name.sh ${1})
+    template=$(bash ${APP_HOME}/.devcontainer/scripts/git/get-branch-name.sh ${1})
     number=$(git rev-list --count ${template}/main)
     echo "MERGE-${template}-${number}"
 }
@@ -35,6 +35,6 @@ You can now merge your branch with the main branch.
 
 If you want to abort the merge, run:
 
-    bash /workspace/.devcontainer/scripts/git/abort-merge-template.sh
+    bash ${APP_HOME}/.devcontainer/scripts/git/abort-merge-template.sh
 
 """
