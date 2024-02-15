@@ -20,6 +20,7 @@ function check_merge_template() {
 
     # merge branch
     if [[ $merge_message == "Already up to date." ]]; then
+        git merge --abort
         echo -e "up-to-date"
     else
         # abort merge
