@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/base:debian
+FROM mcr.microsoft.com/devcontainers/base:debian as builder
 # FROM mcr.microsoft.com/devcontainers/base:jammy
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -44,3 +44,20 @@ RUN echo "done 0" \
     && echo "done 3" \
     && curl -sSL https://install.python-poetry.org | python3 - \
     && poetry config virtualenvs.in-project true
+
+FROM builder as development
+ENV APP_HOME="/workspace"
+CMD /bin/sh -c "while sleep 1000; do :; done"
+
+FROM builder as production
+ENV APP_HOME="/app"
+RUN echo "Copying nginx.conf to /etc/nginx/nginx.conf"
+COPY ./.devcontainer/nginx/nginx.conf ${APP_HOME}/.devcontainer/nginx/nginx.conf
+RUN echo "Copying files to ${APP_HOME}"
+COPY . ${APP_HOME}
+RUN echo "Copying .devcontainer/scripts to ${APP_HOME}/.devcontainer/scripts"
+COPY ./.devcontainer/scripts ${APP_HOME}/.devcontainer/scripts
+WORKDIR ${APP_HOME}
+RUN echo "Installing dependencies"
+RUN poetry install --only main
+CMD bash ${APP_HOME}/.devcontainer/scripts/run-production.sh

@@ -2,7 +2,10 @@ version: "latest"
 
 services:
   django-devcontainer: # ! 👈 name of the service
-    build: . # path to the Dockerfile
+    build:
+      context: ../ # build the image from the parent directory
+      dockerfile: ./.devcontainer/Dockerfile # use the Dockerfile in the .devcontainer directory
+      target: development # use the development stage in the Dockerfile choise between development | production
     container_name: django-devcontainer # ! 👈 name of the container
     restart: always # restart the container if it stops
     volumes: # mount the current directory to the container
@@ -41,4 +44,3 @@ services:
       # MEDIA_ROOT: /media
     ports: # expose ports
       - "8000:80" # expose port 8000 to the host
-    command: /bin/sh -c "while sleep 1000; do :; done" # * keep the container running
