@@ -5,7 +5,7 @@ function get_unique_remote_name() {
 }
 
 function get_branch_name() {
-    template=$(bash ${APP_HOME}/.devcontainer/scripts/git/get-branch-name.sh ${1})
+    template=$(get_unique_remote_name ${1})
     number=$(git rev-list --count ${template}/main)
     echo "MERGE-${template}-${number}"
 }
