@@ -2,11 +2,14 @@ version: "latest"
 
 services:
   python-devcontainer: # ! 👈 name of the service
-    build: . # path to the Dockerfile
+    build:
+      context: ../ # build the image from the parent directory
+      dockerfile: ./.devcontainer/Dockerfile # use the Dockerfile in the .devcontainer directory
+      target: development # use the development stage in the Dockerfile choise between development | production
     container_name: python-devcontainer # ! 👈 name of the container
     restart: always # restart the container if it stops
     volumes: # mount the current directory to the container
       - ..:/workspace:cached # mount the current directory as workspace to the container
     environment: # set environment variables
+      APP_HOME: /workspace # set the APP_HOME environment variable to /workspace
       POETRY_VIRTUALENVS_IN_PROJECT: True
-    command: /bin/sh -c "while sleep 1000; do :; done" # * keep the container running
